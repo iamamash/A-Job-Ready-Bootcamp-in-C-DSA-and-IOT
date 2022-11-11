@@ -1,5 +1,5 @@
 # Tic-Tac-Toe
-Another game in C i.e. "Tic-Tac-Toe". Added few more features to this game like
+Another game in C i.e. "Tic-Tac-Toe". Added few more features to this game like<br>
 (1) Play with Player<br>
 (2) Play with computer<br>
 (3) Play with Evil Computer<br>
