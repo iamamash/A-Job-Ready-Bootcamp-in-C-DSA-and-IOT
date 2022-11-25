@@ -11,6 +11,7 @@
 <b>Assignment - 33 :  Virtual Function, Abstract Class</b><br>
 <b>Assignment - 34 :  File Handling</b><br>
 <b>Assignment - 35 :  Templates</b><br>
+<b>Assignment - 36 :  STL: array</b><br>
 <b>Assignment - 37 :  STL: vector</b><br>
 <b>Assignment - 38 :  List</b><br>
 <b>Assignment - 39 :  Forward List</b><br>
