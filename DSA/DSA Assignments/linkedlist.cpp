@@ -58,35 +58,37 @@ public:
 
     void insertAtMiddle(int n, int v)
     {
-        if (n > size)
+        Node *temp = new Node();
+        temp->value = v;
+        if (size == 0 && head == NULL && n > 0)
+        {
+            size++;
+            head = temp;
+            return;
+        }
+        else if (n > size || n < 1)
         {
             cout << "Position dosn't exist" << endl;
             return;
         }
+
         size++;
-        Node *temp = new Node();
-        temp->value = v;
-        if (head == NULL)
+        Node *t = head;
+        if (n == 1)
+        {
+            temp->next = t;
             head = temp;
+        }
         else
         {
-            Node *t = head;
-            if (n == 1)
+            n--;
+            while (n > 1)
             {
-                temp->next = t;
-                head = temp;
+                --n;
+                t = t->next;
             }
-            else
-            {
-                n--;
-                while (n > 1)
-                {
-                    --n;
-                    t = t->next;
-                }
-                temp->next = t->next;
-                t->next = temp;
-            }
+            temp->next = t->next;
+            t->next = temp;
         }
     }
 
