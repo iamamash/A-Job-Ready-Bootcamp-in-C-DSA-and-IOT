@@ -159,7 +159,9 @@ public:
         Node *temp = head;
         while (temp != NULL)
         {
-            cout << temp->value << " -> ";
+            cout << temp->value;
+            if (temp->next != NULL)
+                cout << " -> ";
             temp = temp->next;
         }
         cout << "\nSize = " << size << endl;
