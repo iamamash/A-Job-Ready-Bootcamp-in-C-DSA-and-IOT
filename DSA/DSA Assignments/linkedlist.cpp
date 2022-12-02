@@ -60,7 +60,7 @@ public:
     {
         Node *temp = new Node();
         temp->value = v;
-        if (size == 0 && head == NULL && n > 0)
+        if (head == NULL)
         {
             size++;
             head = temp;
