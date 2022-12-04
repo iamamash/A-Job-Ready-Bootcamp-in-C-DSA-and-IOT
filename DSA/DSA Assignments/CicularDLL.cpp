@@ -14,14 +14,14 @@ public:
     }
 };
 
-class DLL
+class CDLL
 {
 private:
     Node *head;
     int size = 0;
 
 public:
-    DLL()
+    CDLL()
     {
         head = NULL;
     }
@@ -207,7 +207,7 @@ public:
 
 int main()
 {
-    DLL dl;
+    CDLL dl;
     int choice, e, n;
     system("cls");
 
