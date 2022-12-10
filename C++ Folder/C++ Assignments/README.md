@@ -15,6 +15,7 @@
 <b>Assignment - 37 :  STL: vector</b><br>
 <b>Assignment - 38 :  List</b><br>
 <b>Assignment - 39 :  Forward List</b><br>
+<b>Assignment - 40 :  STL: deque</b><br>
 <b>Assignment - 43 :  priority queue</b><br>
 <b>Assignment - 44 :  Set</b><br>
 <b>Assignment - 45 :  Multi Set</b><br>
