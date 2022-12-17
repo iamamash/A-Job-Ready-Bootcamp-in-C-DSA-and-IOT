@@ -225,19 +225,53 @@ int main()
 // Therefore, the total count of such triplets is 3.
 #include <bits/stdc++.h>
 using namespace std;
+int countTriplets(int arr1[], int arr2[], int arr3[], int size)
+{
+    int count = 0;
+    sort(arr1, arr1 + size);
+
+    priority_queue<int, vector<int>, greater<int>> Y, Z;
+
+    for (int i = 0; i < size; i++)
+        Y.push(arr2[i]);
+
+    for (int i = 0; i < size; i++)
+        Z.push(arr3[i]);
+
+    for (int i = 0; i < size; i++)
+    {
+        int x = arr1[i];
+
+        while (!Y.empty() && Y.top() <= x)
+            Y.pop();
+
+        if (Y.empty())
+            break;
+
+        int y = Y.top();
+        Y.pop();
+
+        while (!Z.empty() && Z.top() <= y)
+            Z.pop();
+
+        if (Z.empty())
+            break;
+
+        Z.pop();
+
+        count++;
+    }
+
+    return count;
+}
+
 int main()
 {
-    priority_queue<int> pq;
-    vector<int> X{1, 6, 8, 9, 14}, Y{3, 2, 10, 12, 11}, Z{4, 7, 15, 13, 5};
-    int i = 0, count = 0;
-    while (i != X.size())
-    {
-        if (X[i] < Y[i] && Y[i] < Z[i])
-            ++count;
-        ++i;
-    }
-    pq.push(count);
-    cout << "The Total Count of Such Triplets is : " << pq.top();
+    int X[] = {9, 6, 14, 1, 8}, Y[] = {2, 10, 3, 12, 11}, Z[] = {15, 13, 5, 7, 4};
+    int size = sizeof(X) / sizeof(X[0]);
+
+    cout << countTriplets(X, Y, Z, size);
+
     return 0;
 }
 
@@ -257,22 +291,28 @@ using namespace std;
 int main()
 {
     priority_queue<int> pq;
-    vector<int> arr{2, 3, 1, 5, 6, 3, 7, 9, 14, 10, 2, 5};
-    int K = 35, count = 0, var = 0;
-    while (arr.size())
+    int arr[] = {2, 3, 1, 5, 6, 3, 7, 9, 14, 10, 2, 5};
+    int K = 35, count = 0, size = sizeof(arr) / sizeof(arr[0]);
+
+    for (int i = 0; i < size; i++)
+        pq.push(arr[i]);
+
+    int sum = 0;
+
+    while (!pq.empty() && sum < K)
     {
-        sort(arr.begin(), arr.end());
-        var += arr.back();
-        arr.pop_back();
-        ++count;
-        if (var >= K)
+        sum += pq.top();
+        count++;
+        if (sum >= K)
         {
-            pq.push(count);
-            cout << pq.top();
+            cout << "Smallest Subsequence of sum >= the given sum is : " << count;
             return 0;
         }
+        pq.pop();
     }
+
     pq.push(-1);
-    cout << "Subsequence with sum greater than equal to the given sum is not possible : " << pq.top();
+    cout << "Smallest Subsequence of sum >= the given sum is not possible : " << pq.top();
     return 0;
 }
+
