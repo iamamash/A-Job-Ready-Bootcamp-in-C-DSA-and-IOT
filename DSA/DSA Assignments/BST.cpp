@@ -172,20 +172,23 @@ public:
             else if (left == NULL)
             {
                 Node *temp = right;
-                delete this;
-                return temp;
+                *this = *temp;
+                delete temp;
+                return this;
             }
             else if (right == NULL)
             {
                 Node *temp = left;
-                delete this;
-                return temp;
+                *this = *temp;
+                delete temp;
+                return this;
             }
 
             Node *temp = right->minElement();
             data = temp->data;
             right = right->Delete(temp->data);
         }
+
         return this;
     }
 
@@ -211,12 +214,12 @@ int main()
     root->insertNode(21);
     root->insertNode(26);
 
-    root->Delete(20);
-    root->Delete(5);
     root->Delete(10);
+    root->Delete(20);
     root->Delete(26);
 
     root->inorder();
 
     return 0;
 }
+
