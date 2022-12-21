@@ -214,38 +214,38 @@ public:
         right = NULL;
     }
 
-    int height(node *n)
+    int height()
     {
-        if (n == NULL)
+        if (this == NULL)
             return 0;
-        int left = height(n->left);
-        int right = height(n->right);
+        int Left = left->height();
+        int Right = right->height();
 
-        if (left > right)
-            return left + 1;
+        if (Left > Right)
+            return Left + 1;
         else
-            return right + 1;
+            return Right + 1;
     }
 
-    void printCurrentLevel(node *n, int l)
+    void printCurrentLevel(int l)
     {
-        if (n == NULL)
+        if (this == NULL)
             return;
         else if (l == 0)
-            cout << n->data << " ";
+            cout << data << " ";
         else
         {
-            printCurrentLevel(n->left, l - 1);
-            printCurrentLevel(n->right, l - 1);
+            left->printCurrentLevel(l - 1);
+            right->printCurrentLevel(l - 1);
         }
     }
 
     void levelOrder()
     {
-        int h = height(this);
+        int h = this->height();
 
         for (int i = 0; i < h; i++)
-            printCurrentLevel(this, i);
+            this->printCurrentLevel(i);
     }
 };
 
