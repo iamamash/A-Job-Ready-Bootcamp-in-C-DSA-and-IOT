@@ -14,27 +14,32 @@
 // Output: [0,0,9,0,0]
 #include <bits/stdc++.h>
 using namespace std;
-vector<int> productExceptSelf(vector<int> &nums)
+class Solution
 {
-    vector<int> v(nums.size(), 1);
-
-    for (int i = 1; i < nums.size(); i++)
-        v[i] = nums[i - 1] * v[i - 1];
-
-    int temp = 1;
-    for (int i = nums.size() - 1; i >= 0; i--)
+public:
+    vector<int> productExceptSelf(vector<int> &nums)
     {
-        v[i] *= temp;
-        temp *= nums[i];
-    }
+        vector<int> v(nums.size(), 1);
 
-    return v;
-}
+        for (int i = 1; i < nums.size(); i++)
+            v[i] = nums[i - 1] * v[i - 1];
+
+        int temp = 1;
+        for (int i = nums.size() - 1; i >= 0; i--)
+        {
+            v[i] *= temp;
+            temp *= nums[i];
+        }
+
+        return v;
+    }
+};
 
 int main()
 {
+    Solution s;
     vector<int> nums{1, 2, 3, 4};
-    vector<int> temp(productExceptSelf(nums));
+    vector<int> temp(s.productExceptSelf(nums));
     for (auto i : temp)
         cout << i << " ";
     return 0;
