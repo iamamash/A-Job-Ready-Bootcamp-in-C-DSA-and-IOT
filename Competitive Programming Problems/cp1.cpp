@@ -5,22 +5,27 @@
 // -231 <= x <= 231 - 1
 #include <iostream>
 using namespace std;
-bool palindrome(int x)
+class Solution
 {
-    if (x < 0)
-        return false;
-    int revNum = 0, temp = x;
-    while (temp != 0)
+public:
+    bool palindrome(int x)
     {
-        revNum = (revNum * 10) + (temp % 10);
-        temp = temp / 10;
+        if (x < 0)
+            return false;
+        int revNum = 0, temp = x;
+        while (temp != 0)
+        {
+            revNum = (revNum * 10) + (temp % 10);
+            temp = temp / 10;
+        }
+        return x == revNum;
     }
-    return x == revNum;
-}
+};
 
 int main()
 {
-    if (palindrome(121))
+    Solution s;
+    if (s.palindrome(121))
         cout << "YES" << endl;
     else
         cout << "NO" << endl;
