@@ -15,32 +15,36 @@
 // Example 2:
 // Input: arr = [0,10,5,2]
 // Output: 1
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
-int peakIndexInMountainArray(int *arr, int arrSize)
+class Solution
 {
-    int start = 0, end = arrSize - 1, mid = (start + end) / 2, ans;
-    while (start < end)
+public:
+    int peakIndexInMountainArray(vector<int> &arr)
     {
-        if (arr[mid] > arr[mid + 1])
+        int start = 0, end = arr.size() - 1, mid = (start + end) / 2, ans;
+        while (start < end)
         {
-            if (arr[mid] >= arr[mid - 1])
+            if (arr[mid] > arr[mid + 1])
             {
-                ans = mid;
-                break;
+                if (arr[mid] >= arr[mid - 1])
+                    return mid;
+
+                end = mid;
             }
-            end = mid;
+            else
+                start = mid;
+
+            mid = (start + end) / 2;
         }
-        else
-            start = mid;
-        mid = (start + end) / 2;
+        return mid;
     }
-    return arr[mid];
-}
+};
 
 int main()
 {
-    int arr[] = {-1, 0, 3, 8, 50, 11, 4, 0, -2};
-    cout << peakIndexInMountainArray(arr, 9);
+    Solution s;
+    vector<int> arr{-1, 0, 3, 8, 50, 11, 4, 0, -2};
+    cout << s.peakIndexInMountainArray(arr);
     return 0;
 }
