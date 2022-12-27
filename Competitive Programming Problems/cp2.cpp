@@ -12,32 +12,30 @@
 // Example 2:
 // Input: nums = [-1,1,0,-3,3]
 // Output: [0,0,9,0,0]
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
-void productExceptSelf(int *nums, int numsSize)
+vector<int> productExceptSelf(vector<int> &nums)
 {
-    int *ptr = new int;
-    ptr[0] = 1;
-    for (int i = 1; i < numsSize; i++)
-        ptr[i] = nums[i - 1] * ptr[i - 1];
+    vector<int> v(nums.size(), 1);
+
+    for (int i = 1; i < nums.size(); i++)
+        v[i] = nums[i - 1] * v[i - 1];
+
     int temp = 1;
-    for (int i = numsSize - 1; i >= 0; i--)
+    for (int i = nums.size() - 1; i >= 0; i--)
     {
-        ptr[i] *= temp;
+        v[i] *= temp;
         temp *= nums[i];
     }
-    for (int i = 0; i < numsSize; i++)
-        cout << ptr[i] << " ";
+
+    return v;
 }
 
 int main()
 {
-    int nums[100], size;
-    cout << "Enter the size of array: ";
-    cin >> size;
-    cout << "Enter " << size << " values:" << endl;
-    for (int i = 0; i < size; i++)
-        cin >> nums[i];
-    productExceptSelf(nums, size);
+    vector<int> nums{1, 2, 3, 4};
+    vector<int> temp(productExceptSelf(nums));
+    for (auto i : temp)
+        cout << i << " ";
     return 0;
 }
