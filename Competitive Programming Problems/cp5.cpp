@@ -16,17 +16,35 @@
 // Output: [0,1]
 #include <bits/stdc++.h>
 using namespace std;
+class Solution
+{
+public:
+    vector<int> twoSum(vector<int> &nums, int target)
+    {
+        unordered_map<int, int> m;
+        vector<int> v;
+        for (int i = 0; i != nums.size(); i++)
+        {
+            int temp = target - nums[i];
+            if (m.find(temp) != m.end())
+            {
+                v.push_back(m[temp]);
+                v.push_back(i);
+                return v;
+            }
+            else
+                m[nums[i]] = i;
+        }
+        return v;
+    }
+};
+
 int main()
 {
-    int arr[] = {3, 3}, target = 6;
-    unordered_map<int, int> m;
-    for (int i = 0; i < 2; i++)
-    {
-        int temp = target - arr[i];
-        if (m.find(temp) != m.end())
-            cout << "[" << m[temp] << ", " << i << "]";
-        else
-            m[arr[i]] = i;
-    }
+    Solution s;
+    vector<int> nums{2, 7, 11, 15};
+    vector<int> temp(s.twoSum(nums, 9));
+    for (auto i : temp)
+        cout << i << " ";
     return 0;
 }
