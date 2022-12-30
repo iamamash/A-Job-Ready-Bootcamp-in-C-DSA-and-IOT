@@ -24,28 +24,23 @@ class Solution
 public:
     int lengthOfLongestSubstring(string s)
     {
-        int max = 0;
-        string st = "";
-        vector<string> v;
-        for (int i = 0; s[i]; i++)
-        {
-            st = s[i];
-            for (int j = i + 1; s[j]; j++)
-                if (st.find(s[j]) == string::npos)
-                    st += s[j];
-                else
-                    break;
+        int maxlen = -1, c = 0;
+        unordered_map<char, int> m;
 
-            v.push_back(st);
+        for(int i = 0; s[i]; i++)
+        {
+            if(m.find(s[i]) == m.end() || i - m[s[i]] > c)
+                c++;
+            else
+            {
+                maxlen = max(maxlen, c);
+                c = i - m[s[i]];
+            }
+
+            m[s[i]] = i;
         }
 
-        for (int i = 0; i < v.size(); i++)
-        {
-            st = v[i];
-            if (st.size() > max)
-                max = st.size();
-        }
-        return max;
+        return max(maxlen, c);
     }
 };
 
