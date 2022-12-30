@@ -3,4 +3,5 @@
 <b>Problem 3 : Peak Index in a Mountain Array (Leetcode Medium Level Question no 852)</b><br>
 <b>Problem 4 : Median of Two Sorted Arrays (Leetcode Hard Level Question no. 4)</b><br>
 <b>Problem 5 : Two Sum (Leetcode Easy Level Question no. 1)</b><br>
+<b>Problem 6 : Longest Substring Without Repeating Characters (Leetcode Medium Level Question no 3)</b><br>
 <b>Problem 7 : Remove Duplicates from Sorted Array (Leetcode Easy Level Question no. 26)</b><br>
