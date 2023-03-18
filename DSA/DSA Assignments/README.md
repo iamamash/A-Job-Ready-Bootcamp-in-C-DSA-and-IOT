@@ -5,6 +5,7 @@
 <b>CicularDLL.cpp   :  Circular Doubly Linked List Implementation using Array</b><br>
 <b>CircularQ.cpp    :  Circular Queue Implementation using Array</b><br>
 <b>CicularSLL.cpp   :  Circular Singly Linked List Implementation using Array</b><br>
+<b>Dijkstra Algorithm.cpp   :  Dijkstra Algorithm </b><br>
 <b>DoubleEndedQ.cpp :  Double Ended Queue Implementation using Array</b><br>
 <b>DoublyLL.cpp     :  Doubly Linked List Implementation using Array</b><br>
 <b>Graph.cpp        :   ADJACENCY MATRIX,  ADJACENCY LIST, BFS, DFS</b><br>
