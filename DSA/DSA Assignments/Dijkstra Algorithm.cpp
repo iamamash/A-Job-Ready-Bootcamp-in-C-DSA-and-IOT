@@ -23,7 +23,7 @@ public:
         cin >> nodes;
         maxEdges = nodes * (nodes - 1);
 
-        for (int i = 0; i < maxEdges; i++)
+        for (int i = 1; i <= maxEdges; i++)
         {
             cout << "You can enter (-1, -1) to exit \n\nEnter source vertex : ";
             cin >> source;
