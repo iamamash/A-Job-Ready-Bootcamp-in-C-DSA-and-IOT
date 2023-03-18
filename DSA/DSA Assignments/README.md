@@ -10,6 +10,7 @@
 <b>DoublyLL.cpp     :  Doubly Linked List Implementation using Array</b><br>
 <b>Graph.cpp        :   ADJACENCY MATRIX,  ADJACENCY LIST, BFS, DFS</b><br>
 <b>linkedlist.cpp   :  Linked List Implementation using Array</b><br>
+<b>Prim's Algorithm.cpp    :  Prim's Algorithm (Minimum Spanning Tree)</b><br>
 <b>PriorityQ.cpp    :  Priority Queue Implementation using Array</b><br>
 <b>Queue.cpp        :  Queue Implementation using Array</b><br>
 <b>stack.cpp        :  Stack Implementation using Array</b><br>
