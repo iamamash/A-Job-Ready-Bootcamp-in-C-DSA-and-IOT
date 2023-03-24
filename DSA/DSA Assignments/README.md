@@ -13,4 +13,5 @@
 <b>Prim's Algorithm.cpp    :  Prim's Algorithm (Minimum Spanning Tree)</b><br>
 <b>PriorityQ.cpp    :  Priority Queue Implementation using Array</b><br>
 <b>Queue.cpp        :  Queue Implementation using Array</b><br>
+<b>Sorting.cpp      :  Sorting Algorithms(Bubble Sort, Selection Sort, Insertion Sort, Merge Sort, Quick Sort, Heap Sort)</b><br>
 <b>stack.cpp        :  Stack Implementation using Array</b><br>
