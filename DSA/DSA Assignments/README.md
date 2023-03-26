@@ -15,4 +15,4 @@
 <b>Queue.cpp        :  Queue Implementation using Array</b><br>
 <b>Sorting.cpp      :  Sorting Algorithms(Bubble Sort, Selection Sort, Insertion Sort, Merge Sort, Quick Sort, Heap Sort)</b><br>
 <b>stack.cpp        :  Stack Implementation using Array</b><br>
-<b>String.cpp       :  String/Pattern Mtaching Algorithm (Brute Force Approach, Rabin Karp, KMP Algorithm)</b><br>
+<b>String.cpp       :  String/Pattern Matching Algorithm (Brute Force Approach, Rabin Karp, KMP Algorithm)</b><br>
